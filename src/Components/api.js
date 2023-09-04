@@ -1,0 +1,9 @@
+import axios from 'axios';
+
+export const getArticles = () => {
+    return axios 
+    .get('https://topstories.onrender.com/api/articles')
+    .then((response) => {
+        return response.data.articles;
+    })
+}
