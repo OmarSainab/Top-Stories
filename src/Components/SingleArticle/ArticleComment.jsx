@@ -1,22 +1,24 @@
 import {useState, useEffect} from 'react'
 
-import { getArticles } from './api'
+import { getComments } from '../api'
 
-import  ArticleCard  from './ArticleCard'
+import  CommentCard  from './CommentCard'
 
-const ArticlesList = () => {
+const ArticleComment = ({article, article_id}) => {
 
-    const [ allArticles, setallArticles ] = useState([])
+    const [ allComments, setAllComments ] = useState([])
 
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
+
+
     useEffect(() => {
         setIsLoading(true);
         setIsError(false);
-        getArticles()
+        getComments(article_id)
         .then((data)=>{
-            setallArticles(data);
+          setAllComments(data);
             setIsLoading(false);
         })
         .catch(() => {
@@ -28,14 +30,13 @@ const ArticlesList = () => {
         if (isLoading) return <p>Loading...</p>;
         if (isError) return <p>Error</p>;
 
-        
-
         return (
         
             <section className="articleList">
-              {allArticles.map((article) => (
-                <ArticleCard key={article.article_id} article={article} />
-               
+              <h2>Comments: {article.comment_count}</h2>
+              {allComments.map((comment) => (
+                <CommentCard key={comment.comment_id} comment={comment} />
+                
               )
               
               )
@@ -45,4 +46,6 @@ const ArticlesList = () => {
           );
         }
     
-    export default ArticlesList;
+    export default ArticleComment;
+
+    //sending comment object to CommentCard

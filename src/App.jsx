@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Nav from "./Components/Nav";
-import ArticlesList from "./Components/ArticlesList";
-import SingleArticle from "./Components/SingleArticle";
+import ArticlesList from "./Components/Articles/ArticlesList";
+import SingleArticle from "./Components/SingleArticle/SingleArticle";
 import Users from "./Components/Users";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
