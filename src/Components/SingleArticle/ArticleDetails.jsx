@@ -7,8 +7,6 @@ const ArticleDetails = ({ article }) => {
         <p>Author: {article.author}</p>
         <p>Created: {article.created_at}</p>
         <img src={article.article_img_url} alt={article.title} />
-        <p>Comments: {article.comment_count}</p>
-        <p>Votes: {article.votes}</p>
       </section>
     );
   };

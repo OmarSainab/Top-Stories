@@ -20,3 +20,12 @@
   flex-wrap: wrap;
   margin: 50px;
 }
+
+.commentCard {
+border-style:initial;
+background-color:whitesmoke;
+margin-top: 20px;
+padding-left: 20px;
+padding-right: 20px;
+
+}

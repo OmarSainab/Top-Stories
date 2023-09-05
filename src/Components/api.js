@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-  const newsApi = axios.create({
+const newsApi = axios.create({
         baseURL:'https://topstories.onrender.com/api/'
     }) 
 
@@ -16,4 +16,12 @@ export const getSingleArticle = (article_id) => {
     .then((response) => {
         return response.data.article;
     })
+}
+
+
+export const getComments = (article_id) => {
+return newsApi.get(`articles/${article_id}/comments`)
+.then((response) => {
+    return response.data.comments;
+})
 }
