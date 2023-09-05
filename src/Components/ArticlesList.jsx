@@ -16,7 +16,6 @@ const ArticlesList = () => {
         setIsError(false);
         getArticles()
         .then((data)=>{
-            console.log(data) 
             setallArticles(data);
             setIsLoading(false);
         })
