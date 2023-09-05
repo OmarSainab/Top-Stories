@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react'
 
-import { getComments } from '../api'
+import { getCommentsById } from '../utils/api'
 
 import  CommentCard  from './CommentCard'
 
-const ArticleComment = ({article, article_id}) => {
+const ArticleComments = ({article, article_id}) => {
 
     const [ allComments, setAllComments ] = useState([])
 
@@ -16,7 +16,7 @@ const ArticleComment = ({article, article_id}) => {
     useEffect(() => {
         setIsLoading(true);
         setIsError(false);
-        getComments(article_id)
+        getCommentsById(article_id)
         .then((data)=>{
           setAllComments(data);
             setIsLoading(false);
@@ -46,6 +46,5 @@ const ArticleComment = ({article, article_id}) => {
           );
         }
     
-    export default ArticleComment;
+    export default ArticleComments;
 
-    //sending comment object to CommentCard
