@@ -16,7 +16,6 @@ const ArticlesList = () => {
         setIsError(false);
         getArticles()
         .then((data)=>{
-           
             setallArticles(data);
             setIsLoading(false);
         })
@@ -27,15 +26,21 @@ const ArticlesList = () => {
         }, []);
 
         if (isLoading) return <p>Loading...</p>;
-        if (isError) return <p>Something went wrong!</p>;
+        if (isError) return <p>Error</p>;
 
         
 
         return (
+        
             <section className="articleList">
               {allArticles.map((article) => (
                 <ArticleCard key={article.article_id} article={article} />
-              ))}
+               
+              )
+              
+              )
+              }
+           
             </section>
           );
         }
