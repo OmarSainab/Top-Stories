@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getSingleArticle } from '../api'
+import { getArticleById } from '../utils/api'
 import  ArticleDetails  from './ArticleDetails'
-import ArticleComment from './ArticleComment'
+import ArticleComment from './ArticleComments'
+import ArticleVotes from './ArticleVotes'
+
 
 const SingleArticle = () => { 
 
@@ -16,7 +18,7 @@ const SingleArticle = () => {
     setIsLoading(true);
     setIsError(false);
     
-    getSingleArticle(article_id)
+    getArticleById(article_id)
       .then((data) => {
         setArticle(data);
         setIsLoading(false);
@@ -33,7 +35,9 @@ const SingleArticle = () => {
     return(
        <>
        <ArticleDetails article={article}/>
+       <ArticleVotes article_id={article_id} votes={article.votes} />
        <ArticleComment article_id={article_id} article={article} />
+    
        
 
 
