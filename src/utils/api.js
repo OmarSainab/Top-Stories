@@ -37,3 +37,10 @@ export const patchArticleVotes = (article_id, request) => {
         return response
   })
   }
+
+  export const getTopics = () => {
+    return newsApi.get('/topics')
+    .then((response) => {
+        return response.data.topics;
+    })
+}
