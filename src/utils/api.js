@@ -4,12 +4,13 @@ const newsApi = axios.create({
         baseURL:'https://topstories.onrender.com/api/'
     }) 
 
-export const getArticles = () => {
-    return newsApi.get('/articles')
-    .then((response) => {
-        return response.data.articles;
-    })
-}
+    export const getArticles = (paramValue) => {
+        return newsApi.get("/articles", {params: paramValue}).then((response) => {
+          return response.data.articles;
+        });
+      };
+//havetouse params as a key
+
 
 export const getArticleById = (article_id) => {
     return newsApi.get(`/articles/${article_id}`)
@@ -37,3 +38,10 @@ export const patchArticleVotes = (article_id, request) => {
         return response
   })
   }
+
+  export const getTopics = () => {
+    return newsApi.get('/topics')
+    .then((response) => {
+        return response.data.topics;
+    })
+}

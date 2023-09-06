@@ -1,4 +1,19 @@
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
+import { getTopics } from "../../utils/api";
+import { Link } from "react-router-dom";
+
+const Topics = () => {
+  const [topics, setTopics] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    setIsError(false);
+    getTopics()
+      .then((data) => {
+=======
 import { getTopics } from '../../utils/api'
 
 const Topics = () => {
@@ -14,6 +29,7 @@ useEffect(() => {
     getTopics()
     .then((data) => {
         console.log(data)
+>>>>>>> main
         setTopics(data);
         setIsLoading(false);
       })
@@ -23,6 +39,26 @@ useEffect(() => {
       });
   }, []);
 
+<<<<<<< HEAD
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error</p>;
+
+  return (
+    <div className="topic">
+      <Link to="/">All Articles </Link>
+      {topics.map(({ slug }) => {
+        return (
+          <div key={slug}>
+            <Link to={`/topics/${slug}`}>{slug} </Link>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Topics;
+=======
 
 if (isLoading) return <p>Loading...</p>;
 if (isError) return <p>Error</p>;
@@ -58,3 +94,4 @@ return (
 
 
 export default Topics;
+>>>>>>> main
