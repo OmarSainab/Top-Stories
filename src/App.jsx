@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Nav from "./Components/Nav";
-import ArticlesList from "./Components/Articles/ArticlesList";
-import SingleArticle from "./Components/SingleArticle/SingleArticle";
-import Users from "./Components/Users";
+
+import Nav from "./components/Nav";
+import ArticlesList from "./components/Articles/ArticlesList";
+import SingleArticle from "./components/SingleArticle/SingleArticle";
+
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -17,7 +17,6 @@ function App() {
         <Routes>
           <Route path="/" element={<ArticlesList />}></Route>
           <Route path="/articles/:article_id" element={<SingleArticle />}></Route>
-          <Route path="/users" element={<Users />}></Route>
         </Routes>
       </main>
     </div>
