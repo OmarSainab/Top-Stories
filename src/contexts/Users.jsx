@@ -17,10 +17,3 @@ export const UserProvider = (props) => {
     </UserContext.Provider>
   );
 };
-      {/* {items.map((item) => {
-        return (
-          <Link to={`/items/${item.item_id}`}>
-            <h2>{item.item_name}</h2>
-          </Link>
-        );
-      })} */}

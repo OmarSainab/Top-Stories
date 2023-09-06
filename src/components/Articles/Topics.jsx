@@ -38,13 +38,14 @@ return (
       }}
       >
         <option value={""}>All topics</option>
-
+        <p>Options</p>
 
        {topics.map(({slug}) => {
         return (
           // grab slug to pass it as a value by destructuring slug from topic i.e. topic.slug
           // give user the option to choose a topic value
-          <option key={slug} value={slug} >{slug}</option>         
+          <option key={slug} value={slug} >{slug}</option>    
+              
           )})}
       </select>
       
