@@ -1,46 +1,40 @@
-import {useState, useEffect} from 'react'
-
-import { getArticles } from '../../utils/api'
-
-import  ArticleCard  from './ArticleCard'
+import { useState, useEffect } from "react";
+import { getArticles } from "../../utils/api";
+import ArticleCard from "./ArticleCard";
 
 const ArticlesList = () => {
+  const [allArticles, setAllArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-    const [ allArticles, setAllArticles ] = useState([])
+  useEffect(() => {
+    setIsLoading(true);
+    setIsError(false);
+    getArticles()
+      .then((data) => {
+        setAllArticles(data);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsLoading(false);
+        setIsError(true);
+      });
+  }, []);
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error</p>;
 
-    useEffect(() => {
-        setIsLoading(true);
-        setIsError(false);
-        getArticles()
-        .then((data)=>{
-          setAllArticles(data);
-            setIsLoading(false);
-        })
-        .catch(() => {
-            setIsLoading(false);
-            setIsError(true);
-          })
-        }, []);
+  return (
+    <div>
+      <Topics
+      setAllArticles={setAllArticles}/>
+      <section className="articleList">
+        {allArticles.map((article) => (
+          <ArticleCard key={article.article_id} article={article} />
+        ))}
+      </section>
+    </div>
+  );
+};
 
-        if (isLoading) return <p>Loading...</p>;
-        if (isError) return <p>Error</p>;
-
-        return (
-        
-            <section className="articleList">
-              {allArticles.map((article) => (
-                <ArticleCard key={article.article_id} article={article} />
-               
-              )
-              
-              )
-              }
-           
-            </section>
-          );
-        }
-    
-    export default ArticlesList;
+export default ArticlesList;
