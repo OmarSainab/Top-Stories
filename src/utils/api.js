@@ -10,8 +10,6 @@ const newsApi = axios.create({
         });
       };
 
-
-
 export const getArticleById = (article_id) => {
     return newsApi.get(`/articles/${article_id}`)
     .then((response) => {
