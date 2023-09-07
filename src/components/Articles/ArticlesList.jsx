@@ -10,12 +10,12 @@ const ArticlesList = () => {
   const [isError, setIsError] = useState(false);
 
   const { topic } = useParams();
-//pass in topic so it can be used as a :topic endpoint
+
   useEffect(() => {
     setIsLoading(true);
     setIsError(false);
     getArticles({topic: topic})
-    //getArticles by params of topic
+
       .then((data) => {
         setAllArticles(data);
         setIsLoading(false);

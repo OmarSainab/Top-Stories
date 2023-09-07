@@ -9,7 +9,7 @@ const newsApi = axios.create({
           return response.data.articles;
         });
       };
-//havetouse params as a key
+
 
 
 export const getArticleById = (article_id) => {
