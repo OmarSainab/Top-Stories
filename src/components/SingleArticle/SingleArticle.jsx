@@ -34,6 +34,7 @@ const SingleArticle = () => {
 
     return(
        <>
+       
        <ArticleDetails article={article}/>
        <ArticleVotes article_id={article_id} votes={article.votes} />
        <ArticleComments article_id={article_id} article={article} />

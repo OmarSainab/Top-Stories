@@ -25,12 +25,15 @@ const Topics = () => {
   if (isError) return <p>Error</p>;
 
   return (
-    <div className="topic">
-      <Link to="/">All Articles </Link>
+    
+    <div className="topicsNav">
+      <Link to="/" className="LinkA">All Articles </Link>
       {topics.map(({ slug }) => {
         return (
-          <div key={slug}>
-            <Link to={`/topics/${slug}`}>{slug} </Link>
+          <div key={slug}> 
+            <Link to={`/topics/${slug}`} className="LinkT">{slug} </Link>
+            
+            
           </div>
         );
       })}

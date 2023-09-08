@@ -2,8 +2,6 @@ import { useContext, useState } from 'react'
 import { postCommentById } from '../../utils/api';
 import { UserContext } from '../../contexts/Users'
 
-// 4 & 5 import useContext hook & UserContext
-//6 invoke the hook
 
 const PostComment = ({ article_id, setAllComments }) => {
    const { user } = useContext(UserContext)

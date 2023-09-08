@@ -19,7 +19,6 @@ const ArticlesList = () => {
     setIsLoading(true);
     setIsError(false);
     getArticles({topic: topic, sort_by: sort, order: order})
-
       .then((data) => {
         setAllArticles(data);
         setIsLoading(false);
