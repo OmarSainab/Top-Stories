@@ -27,11 +27,11 @@ const Topics = () => {
   return (
     
     <div className="topicsNav">
-      <Link to="/" className="LinkA">All Articles </Link>
+      <Link to="/" className="linkA">ALL ARTICLES </Link>
       {topics.map(({ slug }) => {
         return (
           <div key={slug}> 
-            <Link to={`/topics/${slug}`} className="LinkT">{slug} </Link>
+            <Link to={`/topics/${slug}`} className="linkT">{slug.toUpperCase()} </Link>
             
             
           </div>

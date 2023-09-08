@@ -1,15 +1,12 @@
-
 import { useContext, useState } from "react";
-import { UserContext } from '../../contexts/Users';
+import { UserContext } from "../../contexts/Users";
 import { deleteCommentById } from "../../utils/api";
 
-
-
-const CommentCard = ({ comment }) =>
-{
-
+const CommentCard = ({ comment }) => {
+  const event = new Date(comment.created_at);
+  const time = event.toUTCString();
   const [isDeleted, setisDeleted] = useState(false);
-  
+
   const { user } = useContext(UserContext);
 
   const handleClick = () => {
@@ -20,29 +17,25 @@ const CommentCard = ({ comment }) =>
     return;
   };
 
- 
-    return (
-      <div hidden={isDeleted} className="commentCard">
-      <section >
-        <h2>By: {comment.author}, </h2>
-        <p>Created at: {comment.created_at}</p>
-        <h2>{comment.body}</h2>
+  return (
+    <div hidden={isDeleted} className="commentCard">
+      <section>
+        <b>@{comment.author}: </b>
+        <p>Created at: {time}</p>
+        <p>{comment.body}</p>
         <p>Votes: {comment.votes}</p>
         <form>
-        <button
-          onClick={handleClick}
-          hidden={user !== comment.author}
-          className="delete-card"
-        >
-          Delete Comment
-        </button>
-      </form>
+          <button
+            onClick={handleClick}
+            hidden={user !== comment.author}
+            className="delete-card"
+          >
+            Delete Comment
+          </button>
+        </form>
       </section>
-      
-      </div>
+    </div>
+  );
+};
 
-    );
-   };
-  
 export default CommentCard;
-

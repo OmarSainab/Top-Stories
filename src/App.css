@@ -1,68 +1,126 @@
 .App {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center;
-}
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    border: 0;
+    background-color: #f5f5f5;
+    color: black;
+    
+  }
+
+header h1 {
+    color: black;
+  }
 
 #root {
-  text-align: center;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin:  auto;
 }
 
-
 .articleCard {
-  
-  background-color: #fff8f1;
+  background-color: #fdfdfd;
   align-items: center;
   margin: 20px;
   padding: 20px;
-  width: 30vw;
+  width: 20vw;
   border-radius: 20px;
-
 }
 
 .articleCard img {
-  width: 30vw;
+  width: 20vw;
   border-radius: 20px;
+}
+
+.readMore a {
+  color: black;
+  text-decoration: underline;
+  background-color: gainsboro;
 }
 
 .articleList {
   display: flex;
-  flex-direction: row; /* Updated to "row" */
+  flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 50px;
-  
 }
 
-.commentCard {
-border-style:initial;
-background-color:whitesmoke;
-margin-top: 20px;
-padding-left: 20px;
-padding-right: 20px;
-}
 
 .topicsNav {
   display: flex;
-  justify-content:space-around;
-  list-style-type:none;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border-color: white;
-
+  justify-content: space-around;
+  list-style-type: none;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #fdfdfd;
 }
 
-.LinkA {
-background-color:#fff8f1;
-color: black;
-font-size: large;
-font-weight: bold;
+.custom-select {
+  padding: 5px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  background-color: #fff; 
+  color: #333;
+  margin-right: 100px;
 }
 
-.LinkT {
-  background-color:#fff8f1;
+.linkA {
   color: black;
   font-size: large;
   font-weight: bold;
 }
+
+.linkT {
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+  background-color: #fdfdfd;
+}
+
+.commentCard {
+  background-color: #fdfdfd;
+  border-style: solid;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  width: 1000px; 
+  display: block; 
+}
+
+
+.commentForm input {
+  box-sizing: border-box;
+  width: 40%;
+  height: 5em;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #eff4f4;
+  color: #35364b;
+  margin-top: 30px;
+}
+
+.comments {
+  justify-content: center;
+}
+.sortArticles {
+
+  color: black;
+  font-size: large;
+  font-weight: bold;
+}
+
+.articleBody {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.sortArticles {
+  padding-bottom: -100px;
+}
+
+
+

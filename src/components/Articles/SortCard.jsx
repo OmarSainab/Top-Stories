@@ -30,21 +30,21 @@ const SortCard = ({ sort, setSort, order, setOrder }) => {
  }, [sort, order, navigate])
 
   return (
-    <></>
-    // <div className="sortArticles">
-    //   <label htmlFor="sort">Sort By: </label>
-    //   <select name="sort" onChange={handleSort}>
-    //     <option value="created_at">Date</option>
-    //     <option value="votes">Votes</option>
-    //     <option value="comment_count">Comments</option>
-    //   </select>
+ 
+    <div className="sortArticles">
+      <label htmlFor="sort">Sort By: </label>
+      <select name="sort" onChange={handleSort} className="custom-select">
+        <option value="created_at">Date</option>
+      </select>
 
-    //   <label htmlFor="order"> Order: </label>
-    //   <select name="order" onChange={handleOrder}>
-    //     <option value="asc">Ascending</option>
-    //     <option value="desc">Descending</option>
-    //   </select>
-    // </div>
+      <label htmlFor="order"> Order: </label><span>
+      <select name="order" onChange={handleOrder} className="custom-select">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+      </span>
+    
+    </div>
   );
 };
 

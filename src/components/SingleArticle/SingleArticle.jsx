@@ -4,6 +4,7 @@ import { getArticleById } from '../../utils/api'
 import  ArticleDetails  from './ArticleDetails'
 import ArticleComments from './ArticleComments'
 import ArticleVotes from './ArticleVotes'
+import CommentCard from './CommentCard'
 
 
 const SingleArticle = () => { 
@@ -33,16 +34,11 @@ const SingleArticle = () => {
   if (isError) return <p>Error</p>;
 
     return(
-       <>
-       
-       <ArticleDetails article={article}/>
+       <div>
+         <ArticleDetails article={article}/>
        <ArticleVotes article_id={article_id} votes={article.votes} />
        <ArticleComments article_id={article_id} article={article} />
-    
-       
-
-
-       </>
+       </div>  
     )
     }
     

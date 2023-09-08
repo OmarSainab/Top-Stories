@@ -27,9 +27,9 @@ const ArticleVotes = ({votes, article_id}) => {
       return (
 
         <section className='votes'>
-             <h4>
-        Current votes: {updatedVotes} {isError ? <i>{isError}</i> : null}
-      </h4>
+             <h3>
+         Article Votes: {updatedVotes}
+      </h3>
            <button onClick={() => handleUpVote()}>Up Vote 👍</button> 
            <button onClick={() => handleDownVote()}>Down Vote 👎</button>
         </section>

@@ -9,7 +9,6 @@ import PostComment from "./PostComment";
 const ArticleComments = ({ article, article_id }) => {
   const [allComments, setAllComments] = useState([]);
 
-
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -31,22 +30,16 @@ const ArticleComments = ({ article, article_id }) => {
   if (isError) return <p>Error</p>;
 
   return (
-
-  
-      <div>
-        <PostComment 
-        article_id={article_id}
-        setAllComments={setAllComments}
-
-        />
-  <section className="articleList">
-       <h2>Comments</h2>
-      {allComments.map((comment) => (
-        <CommentCard key={comment.comment_id} comment={comment}  />
-      ))} 
-    </section>
+    <div className="comments">
+      
+      <PostComment article_id={article_id} setAllComments={setAllComments} />
+      <h3>{article.comment_count} Comments</h3>
+      <section className="commentsContainer">
+        {allComments.map((comment) => (
+          <CommentCard key={comment.comment_id} comment={comment} />
+        ))}
+      </section>
     </div>
-  
   );
 };
 
