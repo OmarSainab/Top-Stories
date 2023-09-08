@@ -14,8 +14,7 @@ function App() {
   return (
     <div className="App">
     
-      <header>  
-        <p>You are currently logged in as {user}</p>
+      <header>
         <h1>Top Stories</h1>
       </header>
       <main>
