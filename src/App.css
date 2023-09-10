@@ -24,7 +24,7 @@ header h1 {
 }
 
 .articleCard img {
-  width: 50vw;
+  width: 20vw;
   border-radius: 20px;
 }
 
@@ -88,6 +88,11 @@ header h1 {
   background-color: #fdfdfd;
 }
 
+.singleArticle img {
+  width: 25vw;
+  border-radius: 20px; 
+
+}
 .commentCard {
   background-color: #fdfdfd;
   border-style: solid;
