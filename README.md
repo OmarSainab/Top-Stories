@@ -1,6 +1,6 @@
 # Top Stories (Northcoders) App
 
-**This Git repository stores the front-end of a news website**
+**This Git repository stores the front-end of a news website.**
 
 ### The hosted App is available on:
 
