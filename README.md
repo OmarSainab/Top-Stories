@@ -2,7 +2,7 @@
 
 **This Git repository stores the front-end of a news website.**
 
-### The hosted App is available on: netlify deploy --prod
+### The hosted App is available on: https://top-stories-omarsainab.netlify.app/
 
 **Please note that the application's loading time can fluctuate due to inactivity and possible delays in the backend hosting service.**
 
