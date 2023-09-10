@@ -128,8 +128,8 @@ header h1 {
 }
 
 .articleBody {
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 400px;
+  margin-right: 400px;
 }
 
 .sortArticles {
@@ -157,6 +157,14 @@ header h1 {
   .votes,
   .singleArticle {
     width: 300px;
+    margin-left: 2px;
+    font-size: small;
+  }
+}
+
+@media (max-width: 500px) {
+  .articleCard img  {
+    width: 200px;
     margin-left: 2px;
     font-size: small;
   }
