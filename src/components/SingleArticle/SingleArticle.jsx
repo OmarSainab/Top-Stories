@@ -34,7 +34,7 @@ const SingleArticle = () => {
   if (isError) return <p>Error</p>;
 
     return(
-       <div>
+       <div className='singleArticle'>
          <ArticleDetails article={article}/>
        <ArticleVotes article_id={article_id} votes={article.votes} />
        <ArticleComments article_id={article_id} article={article} />
