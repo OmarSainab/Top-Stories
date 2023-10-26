@@ -18,7 +18,6 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<ArticlesList />}></Route>
-          <Route path="/articles" element={<allArticles />}></Route>
           <Route
             path="/articles/:article_id"
             element={<SingleArticle />}

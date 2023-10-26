@@ -32,8 +32,6 @@ const Topics = () => {
         return (
           <div key={slug}> 
             <Link to={`/topics/${slug}`} className="linkT">{slug.toUpperCase()} </Link>
-            
-            
           </div>
         );
       })}
